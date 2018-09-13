@@ -21,10 +21,6 @@
                 margin: 0;
             }
 
-            .full-height {
-                height: 100vh;
-            }
-
             .flex-center {
                 align-items: center;
                 display: flex;
@@ -75,9 +71,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                {{ config('app.name', '#PlateauDecides') }}
+                <!-- {{ config('app.name', '#PlateauDecides') }} -->
+                <img height="300" src="/images/plateaudecides-xlogo.jpg"/>
                 </div>
-
                 <div>
                 <?php $counter = 0; ?>
                 @foreach ($topics as $topic)

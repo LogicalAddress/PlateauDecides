@@ -20,6 +20,7 @@ class CreateTopicCommentsTable extends Migration
             $table->increments('id');
             $table->text('title')->nullable();
             $table->text('comment');
+            $table->string('slug')->unique();
             
             $table->integer('topic_id')->unsigned();
             $table->integer('user_id')->unsigned();

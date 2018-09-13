@@ -58,10 +58,6 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
         </style>
     </head>
     <body>
@@ -80,6 +76,21 @@
             <div class="content">
                 <div class="title m-b-md">
                 {{ config('app.name', '#PlateauDecides') }}
+                </div>
+
+                <div>
+                <?php $counter = 0; ?>
+                @foreach ($topics as $topic)
+                    <?php if($counter === 10) { break ;}else{ $counter++; }?>
+                    <h4><a href="/topics/{{$topic->slug}}">{{$topic->title}}</a></h4>
+                    <div class="row review">
+                        <div class="large-12 columns">
+                            <i class="a-icon a-icon-star a-star-3"></i>
+                            <span class="round alert label">{{20}}</span>
+                            <div class="product_description">{{$topic->description}}</div>
+                        </div>
+                    </div>
+                @endforeach
                 </div>
             </div>
         </div>

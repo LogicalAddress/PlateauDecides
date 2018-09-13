@@ -14,7 +14,26 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <h1>Create Topic</h1>
+
+                    {!! Form::open(array('action' => 'TopicController@store', 'method'=>'POST')) !!}
+
+                    <div class="form-group">
+                        {!! Form::label('', 'Title:', array('class' => 'inline')) !!}
+                        {!! Form::text('title', old('title'), array('class' => 'form-control', 'id' => 'title', 'placeholder' => "Security")) !!}
+                    </div>
+
+                    <div class="form-group">
+                        {!! Form::label('', 'Description:', array('class' => 'inline')) !!}
+                        {!! Form::text('description', old('description'), array('class' => 'form-control', 'id' => 'description')) !!}
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="small button alert">Create Topic</button>
+                    </div>
+
+                    {!! Form::close() !!}
+                            
                 </div>
             </div>
         </div>

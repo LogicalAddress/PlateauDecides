@@ -10,4 +10,9 @@ class TopicComment extends Model
 {
     use Taggable;
     use Vote;
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }
